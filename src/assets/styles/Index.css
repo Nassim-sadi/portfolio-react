@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+.container {
+  @apply flex flex-col gap-4 w-full max-w-5xl mx-auto p-2 md:p-4 mt-16;
+}
+
+.section {
+  @apply min-h-screen w-full mx-auto p-4 rounded-md text-center text-white;
+}
+
+.main {
+  @apply bg-amber-700;
+}
+
+.projects {
+  @apply bg-green-700;
+}
+
+.about {
+  @apply bg-slate-900;
+}
+
+.contact {
+  @apply bg-rose-700;
+}
+
+.skills {
+  @apply bg-sky-700;
+}
