@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# My React Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![Vite](https://img.shields.io/badge/Vite-4.5-purple?logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://react.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/github/license/your-username/your-repo?style=flat)](LICENSE)
+[![Deploy](https://img.shields.io/badge/Deployed-Live-green?logo=vercel)](https://your-portfolio-link.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> ⚡ A modern React + TypeScript portfolio built with Vite, Tailwind CSS, and shadcn/ui components.
 
-```js
+
+# 💼 Your Name — Portfolio
+
+
+## 🚀 Tech Stack
+
+- **React** — Component-based frontend library.
+- **TypeScript** — Static typing for robust code.
+- **Vite** — Lightning-fast development server.
+- **Tailwind CSS** — Utility-first styling framework.
+- **ShadCN/UI** — Accessible and stylish UI components.
+
+---
+
+## 🧠 Features
+
+- ⚡ Fast development with Vite + HMR.
+- 🎨 Modern, minimal, and responsive UI.
+- 💡 Strong typing for cleaner code.
+- 📱 Mobile-first and fully responsive.
+- ♿ Accessible components (ShadCN).
+- 🔗 Smooth scrolling navigation.
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the development server
+
+```bash
+npm run dev
+```
+
+### 3. Build for production
+
+```bash
+npm run build
+```
+
+### 4. Preview the production build locally
+
+```bash
+npm run preview
+```
+
+---
+
+## 🧹 Linting & Code Quality
+
+For advanced type-aware linting, extend your ESLint config like this:
+
+```ts
 export default tseslint.config({
   extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
     ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
     ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
     ...tseslint.configs.stylisticTypeChecked,
   ],
   languageOptions: {
-    // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ['./tsconfig.json'],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌐 Live Preview
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+👉 [Visit the Live Portfolio](https://your-live-link.com)
+
+---
+
+## 📄 License
+
+MIT — feel free to use and adapt.
