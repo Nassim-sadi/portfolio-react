@@ -5,7 +5,7 @@
 }
 
 .section {
-  @apply min-h-screen w-full mx-auto p-4 rounded-md text-center text-white;
+  @apply min-h-screen w-full mx-auto p-4 rounded-md text-center;
 }
 
 .main {
@@ -17,7 +17,33 @@
 }
 
 .about {
-  @apply bg-slate-900;
+  @apply flex flex-col  md:flex-row gap-4;
+  div {
+    @apply flex-1 flex flex-col gap-4 items-center justify-center;
+
+    h1 {
+      @apply text-3xl font-bold;
+    }
+  }
+  .about-image {
+    @apply relative;
+
+    .about-background {
+      @apply w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10;
+    }
+
+    .logo-container {
+      @apply w-12 h-12 relative;
+
+      .logo {
+        @apply w-full h-full object-contain relative z-10;
+      }
+
+      .logo-bg {
+        @apply absolute w-full h-full object-contain opacity-40 blur-lg scale-110 z-0;
+      }
+    }
+  }
 }
 
 .contact {
