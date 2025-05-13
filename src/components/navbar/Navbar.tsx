@@ -1,20 +1,27 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-
+import { Link as ScrollLink } from "react-scroll";
 const Navbar = () => {
   const menuItems = [
-    { name: "About", href: "#about", target: "_self" },
-    { name: "Services", href: "#services", target: "_self" },
-    { name: "Projects", href: "#projects", target: "_self" },
-    { name: "Skills", href: "#skills", target: "_self" },
-    { name: "Contact", href: "#contact", target: "_self" },
-    {
-      name: "Resume",
-      href: "https://drive.google.com/file/d/1ES7apA3yrxR7kN403rBz4DNjynu9mtt9/view?usp=sharing",
-      target: "_blank",
-    },
+    { name: "About", href: "about", target: "_self" },
+    { name: "Services", href: "services", target: "_self" },
+    { name: "Skills", href: "skills", target: "_self" },
+    { name: "Projects", href: "projects", target: "_self" },
+    { name: "Contact", href: "contact", target: "_self" },
   ];
+
+  const resume = {
+    name: "Resume",
+    href: "https://drive.google.com/file/d/1ES7apA3yrxR7kN403rBz4DNjynu9mtt9/view?usp=sharing",
+    target: "_blank",
+  };
+
+  const scrollConfig = {
+    smooth: true,
+    offset: 0,
+    duration: 500,
+  };
 
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -36,47 +43,69 @@ const Navbar = () => {
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <nav className="mx-auto flex items-center justify-between px-6 py-4 lg:px-12 max-w-7xl bg-indigo-800 rounded-b-2xl shadow-lg">
-        <div className="flex items-center text-white font-bold text-xl">
-          <a href="/">Logo</a>
+      <nav className="mx-auto flex items-center justify-between p-4 w-full max-w-[var(--max_width)] ">
+        <div className="flex items-center  font-bold text-xl ">
+          <ScrollLink to="/" target="_self" {...scrollConfig}>
+            Logo
+          </ScrollLink>
         </div>
 
         <div className="hidden md:flex items-center">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-6 nav-items">
             {menuItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
+              <li key={item.name} className="nav-item">
+                <ScrollLink
+                  to={item.href}
                   target={item.target}
-                  className="text-lg font-medium text-white hover:underline"
+                  {...scrollConfig}
+                  className="text-lg font-medium  hover:underline"
                 >
                   {item.name}
-                </a>
+                </ScrollLink>
               </li>
             ))}
+
+            <a
+              href={resume.href}
+              target="_blank"
+              className="text-lg font-medium hover:underline"
+            >
+              {resume.name}
+            </a>
           </ul>
         </div>
 
         <div className="md:hidden flex items-center">
           <Sheet>
             <SheetTrigger asChild>
-              <button className="p-2 text-white">
+              <button className="p-2 text-black">
                 <Menu size={28} />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="p-6 bg-indigo-800 text-white">
+            <SheetContent side="right" className="p-6 bg-slate-800 text-white">
               <ul className="flex flex-col gap-4 mt-8">
                 {menuItems.map((item) => (
                   <li key={item.name}>
-                    <a
-                      href={item.href}
+                    <ScrollLink
+                      to={item.href}
                       target={item.target}
+                      {...scrollConfig}
                       className="text-lg font-medium hover:underline"
                     >
                       {item.name}
-                    </a>
+                    </ScrollLink>
                   </li>
                 ))}
+
+                <li>
+                  <a
+                    href={resume.href}
+                    target="_blank"
+                    className="text-lg font-medium hover:underline"
+                  >
+                    {resume.name}
+                  </a>
+                </li>
               </ul>
             </SheetContent>
           </Sheet>

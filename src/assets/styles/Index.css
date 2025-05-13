@@ -1,55 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
-.container {
-  @apply flex flex-col gap-4 w-full max-w-5xl mx-auto p-2 md:p-4 mt-16;
+:root {
+  font-family: "Outfit", sans-serif;
+  --background: #fcfeff;
+  --max_width: 1100px;
+}
+
+.content {
+  @apply mx-auto p-4;
+  max-width: var(--max_width);
+}
+
+.main_container {
+  @apply flex flex-col gap-4 w-full;
 }
 
 .section {
-  @apply min-h-screen w-full mx-auto p-4 rounded-md text-center;
+  @apply min-h-screen w-full mx-auto rounded-md text-center;
 }
 
 .main {
-  @apply bg-amber-700;
+  @apply bg-amber-100;
 }
 
 .projects {
-  @apply bg-green-700;
+  @apply bg-green-100;
 }
 
 .about {
-  @apply flex flex-col  md:flex-row gap-4;
-  div {
-    @apply flex-1 flex flex-col gap-4 items-center justify-center;
+  @apply relative w-full h-screen;
 
-    h1 {
-      @apply text-3xl font-bold;
-    }
-  }
-  .about-image {
-    @apply relative;
-
-    .about-background {
-      @apply w-full aspect-square object-contain absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10;
-    }
-
-    .logo-container {
-      @apply w-12 h-12 relative;
-
-      .logo {
-        @apply w-full h-full object-contain relative z-10;
-      }
-
-      .logo-bg {
-        @apply absolute w-full h-full object-contain opacity-40 blur-lg scale-110 z-0;
-      }
-    }
+  img {
+    @apply w-full h-full object-cover absolute top-0 left-0 z-0;
   }
 }
 
 .contact {
-  @apply bg-rose-700;
+  @apply bg-rose-100;
 }
 
 .skills {
-  @apply bg-sky-700;
+  @apply bg-sky-100;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.nav-items {
+  background-color: #1f2937; /* dark gray */
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.nav-item {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  text-shadow: 0 12px 24px rgba(0, 255, 164, 0.2);
 }
