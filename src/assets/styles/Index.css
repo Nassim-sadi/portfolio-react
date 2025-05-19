@@ -17,11 +17,11 @@
 }
 
 .section {
-  @apply min-h-screen w-full mx-auto rounded-md text-center;
+  @apply min-h-screen w-full mx-auto rounded-md;
 }
 
 .main {
-  @apply bg-amber-100;
+  @apply min-h-min;
 }
 
 .projects {
@@ -67,4 +67,8 @@
 .nav-item:hover {
   transform: translateY(-6px) scale(1.02);
   text-shadow: 0 12px 24px rgba(0, 255, 164, 0.2);
+}
+
+h2 {
+  @apply text-2xl font-semibold mb-4 text-gray-700;
 }

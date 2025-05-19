@@ -1,7 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import About from "@/components/about/About";
 import Main from "@/components/main/Main";
-import Skills from "@/components/skills/Skills";
 import Projects from "@/components/projects/Projects";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
@@ -19,9 +18,6 @@ function App() {
         </Element>
         <Element name="services">
           <Main />
-        </Element>
-        <Element name="skills">
-          <Skills />
         </Element>
         <Element name="projects">
           <Projects />

@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
+
 const Navbar = () => {
   const menuItems = [
     { name: "About", href: "about", target: "_self" },
     { name: "Services", href: "services", target: "_self" },
-    { name: "Skills", href: "skills", target: "_self" },
     { name: "Projects", href: "projects", target: "_self" },
     { name: "Contact", href: "contact", target: "_self" },
   ];
@@ -44,9 +49,17 @@ const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex items-center justify-between p-4 w-full max-w-[var(--max_width)] ">
-        <div className="flex items-center  font-bold text-xl ">
-          <ScrollLink to="/" target="_self" {...scrollConfig}>
-            Logo
+        <div className="nav-items">
+          <ScrollLink
+            to="/"
+            target="_self"
+            {...scrollConfig}
+            className="cursor-pointer "
+          >
+            <div className="flex items-center gap-2 text-xl  font-semibold">
+              <span className="text-muted-foreground">[&gt;]</span>
+              <span>nassim.dev</span>
+            </div>{" "}
           </ScrollLink>
         </div>
 
@@ -92,7 +105,7 @@ const Navbar = () => {
                       {...scrollConfig}
                       className="text-lg font-medium hover:underline"
                     >
-                      {item.name}
+                      <SheetClose>{item.name}</SheetClose>
                     </ScrollLink>
                   </li>
                 ))}
