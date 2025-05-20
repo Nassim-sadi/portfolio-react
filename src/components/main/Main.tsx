@@ -1,13 +1,23 @@
-import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "../ui/card";
 import { Layers, Network, Monitor } from "lucide-react";
+import {
+  laravelLogo,
+  reactLogo,
+  tailwindLogo,
+  vueLogo,
+  sqlLogo,
+  gitLogo,
+  phpLogo,
+} from "@/assets/logos.ts";
+import ServicesDesktop from "@/components/main/ServicesDesktop";
+import ServicesMobile from "@/components/main/ServicesMobile";
+
+const useIsMobile = () => {
+  const userAgent = window.navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    userAgent
+  );
+};
+
 const Main = () => {
   const services = [
     {
@@ -15,56 +25,50 @@ const Main = () => {
       description:
         "I build robust full-stack applications using Laravel on the backend and React or Vue on the frontend. Clean code, scalable architecture, and responsive UI are a priority.",
       icon: <Layers className="w-6 h-6 text-primary" />,
-      tools: ["PHP", "Laravel", "MySQL", "React", "Vue"],
-    },
-    {
-      title: "RESTful API Development",
-      description:
-        "I design and implement secure, efficient, and well-documented RESTful APIs with Laravel, ready to integrate with web or mobile clients.",
-      icon: <Network className="w-6 h-6 text-primary" />,
-      tools: ["PHP", "Laravel", "MySQL"],
-    },
-    {
-      title: "Modern Frontend UI",
-      description:
-        "I craft modern, accessible, and responsive interfaces using Tailwind CSS, React, or Vue, ensuring seamless user experiences across devices.",
-      icon: <Monitor className="w-6 h-6 text-primary" />,
-      tools: ["Tailwind CSS", "React", "Vue"],
+      tools: [
+        { name: "PHP", icon: phpLogo },
+        { name: "Laravel", icon: laravelLogo },
+        { name: "MySQL", icon: sqlLogo },
+        { name: "Tailwind CSS", icon: tailwindLogo },
+        { name: "React", icon: reactLogo },
+        { name: "Git", icon: gitLogo },
+        { name: "Vue", icon: vueLogo },
+      ],
+      Children: [
+        {
+          title: "RESTful API Development",
+          description:
+            "I design and implement secure, efficient, and well-documented RESTful APIs with Laravel, ready to integrate with web or mobile clients.",
+          icon: <Network className="w-6 h-6 text-primary" />,
+          tools: [
+            { name: "PHP", icon: phpLogo },
+            { name: "Laravel", icon: laravelLogo },
+            { name: "MySQL", icon: sqlLogo },
+          ],
+        },
+        {
+          title: "Modern Frontend UI",
+          description:
+            "I craft modern, accessible, and responsive interfaces using Tailwind CSS, React, or Vue, ensuring seamless user experiences across devices.",
+          icon: <Monitor className="w-6 h-6 text-primary" />,
+          tools: [
+            { name: "Tailwind CSS", icon: tailwindLogo },
+            { name: "React", icon: reactLogo },
+            { name: "Vue", icon: vueLogo },
+          ],
+        },
+      ],
     },
   ];
 
   return (
-    <div className="main section content">
-      <h2>What i do</h2>
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, index) => (
-          <Card key={index} className=" border-accent">
-            <CardHeader className="flex flex-row h-auto w-full gap-4 items-start">
-              <div className="p-2 bg-muted rounded-md">{service.icon}</div>
-              <div className="flex h-full items-center">
-                <CardTitle>{service.title}</CardTitle>
-              </div>
-            </CardHeader>
-
-            <CardContent className="flex-1">
-              <CardDescription>{service.description}</CardDescription>
-            </CardContent>
-
-            <CardFooter>
-              <div className="flex flex-wrap gap-2">
-                {service.tools.map((tool, index) => (
-                  <div
-                    key={index}
-                    className="bg-muted rounded-md px-2 py-1 text-sm"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+    <div className="main section content overflow-x-auto">
+      <h2 className="text-2xl font-bold mb-6 md:mb-8">What I Do</h2>
+      {useIsMobile() ? (
+        <ServicesMobile services={services} />
+      ) : (
+        <ServicesDesktop services={services} />
+      )}
     </div>
   );
 };

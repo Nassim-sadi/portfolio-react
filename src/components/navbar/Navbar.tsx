@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             <div className="flex items-center gap-2 text-xl  font-semibold">
               <span className="text-muted-foreground">[&gt;]</span>
-              <span>nassim.dev</span>
+              <span className="logo">nassim.dev</span>
             </div>{" "}
           </ScrollLink>
         </div>
