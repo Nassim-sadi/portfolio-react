@@ -11,12 +11,7 @@ import {
 import ServicesDesktop from "@/components/main/ServicesDesktop";
 import ServicesMobile from "@/components/main/ServicesMobile";
 
-const useIsMobile = () => {
-  const userAgent = window.navigator.userAgent;
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    userAgent
-  );
-};
+import useIsMobile from "@/utils/useIsMobile";
 
 const Main = () => {
   const services = [

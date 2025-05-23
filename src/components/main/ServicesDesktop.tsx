@@ -1,42 +1,11 @@
-import { Service, Tool } from "@/types/services";
+import { Service } from "@/types/services";
 import { Tree, TreeNode } from "react-organizational-chart";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+
+import ServiceCard from "@/components/main/ServiceCard";
+
 const ServiceNode = ({ service }: { service: Service }) => {
   return (
-    <TreeNode
-      label={
-        <Card className="border-accent w-[300px] text-left text-sm mx-auto">
-          <CardHeader className="flex flex-row gap-4 items-start">
-            <div className="p-2 bg-muted rounded-md">{service.icon}</div>
-            <div>
-              <CardTitle className="text-base">{service.title}</CardTitle>
-            </div>
-          </CardHeader>
-
-          <CardContent>
-            <CardDescription>{service.description}</CardDescription>
-          </CardContent>
-
-          <CardFooter className="flex flex-wrap gap-2">
-            {service.tools?.map((tool: Tool, i: number) => (
-              <div key={i} className="flex flex-row gap-2">
-                <img src={tool.icon} className="w-6 h-6" alt="" />
-                <span className="bg-muted rounded-md px-2 py-1 text-xs font-medium">
-                  {tool.name}
-                </span>
-              </div>
-            ))}
-          </CardFooter>
-        </Card>
-      }
-    >
+    <TreeNode label={<ServiceCard service={service} />}>
       {service.Children?.map((child: Service, i: number) => (
         <ServiceNode key={i} service={child} />
       ))}

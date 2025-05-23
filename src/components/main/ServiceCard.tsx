@@ -11,7 +11,7 @@ import { Service, Tool } from "@/types/services";
 const ServiceCard = ({ service }: { service: Service }) => {
   return (
     <Card className="border-accent w-full max-w-md text-left text-sm mx-auto  mb-4">
-      <CardHeader className="flex flex-row gap-4 items-start">
+      <CardHeader className="flex flex-row gap-4 items-center">
         <div className="p-2 bg-muted rounded-md">{service.icon}</div>
         <CardTitle className="text-base">{service.title}</CardTitle>
       </CardHeader>
