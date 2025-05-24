@@ -1,23 +1,6 @@
-import { motion } from "motion/react";
-import AboutImage from "@/assets/images/undraw_coding_joxb.svg";
-import reactLogo from "@/assets/images/logos/react-svgrepo-com.svg";
-import tailwindLogo from "@/assets/images/logos/tailwind-svgrepo-com.svg";
-import vueLogo from "@/assets/images/logos/vue-svgrepo-com.svg";
-import sqlLogo from "@/assets/images/logos/sql-database-generic-svgrepo-com.svg";
-import laravelLogo from "@/assets/images/logos/laravel-1-logo-svgrepo-com.svg";
-import gitLogo from "@/assets/images/logos/git-svgrepo-com.svg";
 import CodingAnimation from "@/components/ui/animation";
 import background from "@/assets/images/background.jpg";
 const About = () => {
-  const logos = [
-    reactLogo,
-    tailwindLogo,
-    vueLogo,
-    sqlLogo,
-    laravelLogo,
-    gitLogo,
-  ];
-
   return (
     <div className="about relative w-screen min-h-screen" id="about">
       <img

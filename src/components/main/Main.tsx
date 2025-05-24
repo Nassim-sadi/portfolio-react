@@ -12,6 +12,7 @@ import ServicesDesktop from "@/components/main/ServicesDesktop";
 import ServicesMobile from "@/components/main/ServicesMobile";
 
 import useIsMobile from "@/utils/useIsMobile";
+import LowerThirdBanner from "../banner/Banner";
 
 const Main = () => {
   const services = [
@@ -57,8 +58,8 @@ const Main = () => {
   ];
 
   return (
-    <div className="main section content overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-6 md:mb-8">What I Do</h2>
+    <div className="main section content">
+      <LowerThirdBanner text="What I Do" subtext="My Services" color="indigo" />
       {useIsMobile() ? (
         <ServicesMobile services={services} />
       ) : (

@@ -18,7 +18,7 @@ const ServicesDesktop = ({ services }: { services: Service[] }) => {
     <div className="flex flex-col gap-8">
       <Tree
         label={
-          <div className="text-primary font-semibold text-lg">Services</div>
+          <div className="text-primary font-semibold text-xl">Services</div>
         }
         lineWidth={"2px"}
         lineColor={"#4B5563"}

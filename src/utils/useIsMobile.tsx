@@ -1,25 +1,11 @@
 import { useEffect, useState } from "react";
 
 const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(() => {
-    const userAgent = navigator.userAgent;
-    const uaMatch =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        userAgent
-      );
-    const widthMatch = window.innerWidth <= 768;
-    return uaMatch || widthMatch;
-  });
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      const userAgent = navigator.userAgent;
-      const uaMatch =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          userAgent
-        );
-      const widthMatch = window.innerWidth <= 768;
-      setIsMobile(uaMatch || widthMatch);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);

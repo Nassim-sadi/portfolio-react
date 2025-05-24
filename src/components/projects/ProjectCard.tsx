@@ -1,0 +1,53 @@
+import ProjectCarousel from "@/components/projects/Carousel";
+import { Project, Tool } from "@/types/projects";
+type ProjectCardProps = Project & {
+  reverse?: boolean;
+};
+
+const ProjectCard = ({
+  title,
+  description,
+  images,
+  githubLink,
+  tools,
+  reverse,
+}: ProjectCardProps) => {
+  return (
+    <section
+      className={`flex flex-col md:flex-row ${
+        reverse ? "md:flex-row-reverse" : ""
+      } items-center gap-6 mb-8 bg-white p-4 rounded-md border border-gray-200`}
+    >
+      <div className="md:w-1/2 w-full">
+        <ProjectCarousel images={images} />
+      </div>
+
+      <div className="md:w-1/2 w-full text-center md:text-left space-y-4">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <p className="text-gray-600">{description}</p>
+        {/* tools */}
+        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+          {tools?.map((tool: Tool, i: number) => (
+            <div key={i} className="flex flex-row gap-2 items-center">
+              <img src={tool.icon} className="w-6 h-6" alt={tool.name} />
+              <span className="bg-muted rounded-md px-2 py-1 text-xs font-medium">
+                {tool.name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-2 px-4 py-2 text-white bg-gray-800 hover:bg-gray-700 rounded"
+        >
+          View Code
+        </a>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectCard;
