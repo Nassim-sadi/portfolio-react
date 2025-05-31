@@ -15,7 +15,7 @@ const ServiceNode = ({ service }: { service: Service }) => {
 
 const ServicesDesktop = ({ services }: { services: Service[] }) => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col">
       <Tree
         label={
           <div className="text-primary font-semibold text-xl">Services</div>
@@ -23,6 +23,7 @@ const ServicesDesktop = ({ services }: { services: Service[] }) => {
         lineWidth={"2px"}
         lineColor={"#4B5563"}
         lineBorderRadius={"12px"}
+        lineHeight="3rem"
       >
         {services.map((service, i) => (
           <ServiceNode key={i} service={service} />

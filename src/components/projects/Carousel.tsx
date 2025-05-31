@@ -20,8 +20,6 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* put buttons in bottom of carousel */}
-      {/* Button wrapper at bottom center, inside image */}
       <div className="flex gap-4 w-full justify-center mt-2">
         <CarouselPrevious className="carousel-btn" />
         <CarouselNext className="carousel-btn" />

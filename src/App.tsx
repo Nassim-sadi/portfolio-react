@@ -2,7 +2,6 @@ import Navbar from "@/components/navbar/Navbar";
 import About from "@/components/about/About";
 import Main from "@/components/main/Main";
 import Projects from "@/components/projects/Projects";
-import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import { Element } from "react-scroll";
 
@@ -22,11 +21,13 @@ function App() {
         <Element name="projects">
           <Projects />
         </Element>
-        <Element name="contact">
+        {/* <Element name="contact">
           <Contact />
-        </Element>
+        </Element> */}
       </div>
-      <Footer />
+      <Element name="contact">
+        <Footer />
+      </Element>
     </>
   );
 }

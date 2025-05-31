@@ -15,7 +15,16 @@ const Projects = () => {
   const projects = [
     {
       title: "Portfolio Site",
-      description: "Responsive portfolio with dark mode and Lottie animation.",
+      description: (
+        <>
+          <h4>Portfolio Site</h4>
+          <p>
+            Responsive portfolio with dark mode and Lottie animation. Built with
+            React, Tailwind CSS, and Lottie. Deployed with Vite and GitHub
+            Pages.
+          </p>
+        </>
+      ),
       images: [
         "https://picsum.photos/600",
         "https://picsum.photos/600",
@@ -26,7 +35,16 @@ const Projects = () => {
         { name: "Tailwind CSS", icon: tailwindLogo },
         { name: "Vue", icon: vueLogo },
       ],
-      githubLink: "https://github.com/yourname/portfolio",
+      actions: [
+        {
+          name: "Live Demo",
+          link: "https://example.com",
+        },
+        {
+          name: "GitHub",
+          link: "https://github.com/yourname/ecommerce",
+        },
+      ],
     },
     {
       title: "E-Commerce App",
@@ -45,7 +63,16 @@ const Projects = () => {
         { name: "Git", icon: gitLogo },
         { name: "Vue", icon: vueLogo },
       ],
-      githubLink: "https://github.com/yourname/ecommerce",
+      actions: [
+        {
+          name: "Live Demo",
+          link: "https://example.com",
+        },
+        {
+          name: "GitHub",
+          link: "https://github.com/yourname/ecommerce",
+        },
+      ],
     },
   ];
 

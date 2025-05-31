@@ -20,6 +20,18 @@ h6 {
   color: var(--color-primary);
 }
 
+h2 {
+  @apply text-3xl font-bold;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+h4 {
+  @apply text-xl font-bold;
+}
+
 .content {
   @apply mx-auto p-4;
   max-width: var(--max_width);
@@ -39,6 +51,9 @@ h6 {
 
 .projects {
   @apply min-h-min;
+  h4 {
+    @apply text-gray-700;
+  }
 }
 
 .about {
