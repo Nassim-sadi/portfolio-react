@@ -7,19 +7,31 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build output
 node_modules
 dist
 dist-ssr
 *.local
 
+# Environment files
+.env
+.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-*.env
+
+# Optional caches
+.parcel-cache
+.turbo
