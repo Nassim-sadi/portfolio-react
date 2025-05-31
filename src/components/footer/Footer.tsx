@@ -1,6 +1,8 @@
 // components/Footer.tsx
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { Button } from "../ui/button";
+import { Loader2Icon } from "lucide-react";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +12,7 @@ const Footer = () => {
   });
 
   const [status, setStatus] = useState<null | "SUCCESS" | "ERROR">(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,6 +22,8 @@ const Footer = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus(null);
 
     emailjs
       .send(
@@ -33,6 +38,9 @@ const Footer = () => {
       })
       .catch(() => {
         setStatus("ERROR");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -60,6 +68,7 @@ const Footer = () => {
             value={formData.from_name}
             onChange={handleChange}
             required
+            disabled={loading}
             placeholder="Your Name"
             className="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
@@ -70,9 +79,10 @@ const Footer = () => {
             value={formData.from_email}
             onChange={handleChange}
             required
+            disabled={loading}
             placeholder="your.email@example.com"
-            className="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            className="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
 
           <textarea
@@ -80,17 +90,21 @@ const Footer = () => {
             value={formData.message}
             onChange={handleChange}
             required
+            disabled={loading}
             rows={5}
             placeholder="Your message..."
             className="w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
 
-          <button
+          <Button
             type="submit"
-            className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-6 rounded transition"
+            disabled={loading}
+            className="flex items-center gap-2"
+            size="lg"
           >
-            Send Message
-          </button>
+            {loading && <Loader2Icon className="animate-spin h-4 w-4" />}
+            {loading ? "Please wait" : "Send Message"}
+          </Button>
 
           {status === "SUCCESS" && (
             <p className="text-green-400 text-sm">Message sent successfully!</p>
