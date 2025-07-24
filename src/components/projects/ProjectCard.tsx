@@ -1,8 +1,6 @@
 import ProjectCarousel from "@/components/projects/Carousel";
 import { Project, Tool, Action } from "@/types/projects";
-type ProjectCardProps = Project & {
-  reverse?: boolean;
-};
+type ProjectCardProps = Project;
 
 const ProjectCard = ({
   title,
@@ -10,19 +8,17 @@ const ProjectCard = ({
   images,
   actions,
   tools,
-  reverse,
 }: ProjectCardProps) => {
   return (
     <section
-      className={`flex flex-col md:flex-row ${
-        reverse ? "md:flex-row-reverse" : ""
-      } items-center gap-6 mb-8 bg-white p-4 rounded-md border border-gray-200`}
+      className="flex flex-col 
+      items-start gap-6 mb-8 bg-white p-4 rounded-md border border-gray-200"
     >
-      <div className="md:w-1/2 w-full">
+      <div className="w-full">
         <ProjectCarousel images={images} />
       </div>
 
-      <div className="md:w-1/2 w-full text-center md:text-left space-y-4">
+      <div className="w-full text-center md:text-left space-y-4">
         <h3>{title}</h3>
         <div className="text-gray-600">{description}</div>
         {/* tools */}

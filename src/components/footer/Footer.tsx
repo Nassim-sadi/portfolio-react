@@ -49,14 +49,16 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         <div>
           <h2 className="text-3xl font-bold mb-4 !text-gray-100">
-            Let’s work together
+            Let’s Connect
           </h2>
           <p className="text-gray-300 mb-6">
-            Have a question or want to collaborate? Drop me a message and I’ll
-            get back to you as soon as possible.
+            I'm currently open to new opportunities in full-stack development.
+            If you're hiring or believe I'd be a valuable addition to your team,
+            feel free to get in touch.
           </p>
+
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Nassim Sadi. All rights reserved.
           </p>
         </div>
 
@@ -99,7 +101,7 @@ const Footer = () => {
           <Button
             type="submit"
             disabled={loading}
-            className="flex items-center gap-2"
+            className="w-full flex items-center justify-center gap-2 hover:bg-emerald-600 cursor-pointer"
             size="lg"
           >
             {loading && <Loader2Icon className="animate-spin h-4 w-4" />}

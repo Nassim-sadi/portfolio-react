@@ -5,7 +5,7 @@ import vueLogo from "@/assets/images/logos/vue-svgrepo-com.svg";
 import sqlLogo from "@/assets/images/logos/sql-database-generic-svgrepo-com.svg";
 import gitLogo from "@/assets/images/logos/git-svgrepo-com.svg";
 import phpLogo from "@/assets/images/logos/Official PHP Logo.svg";
-
+import piniaLogo from "@/assets/images/logos/Pinialogo.png";
 export {
   laravelLogo,
   reactLogo,
@@ -14,4 +14,5 @@ export {
   sqlLogo,
   gitLogo,
   phpLogo,
+  piniaLogo,
 };

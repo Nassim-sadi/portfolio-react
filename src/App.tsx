@@ -21,9 +21,6 @@ function App() {
         <Element name="projects">
           <Projects />
         </Element>
-        {/* <Element name="contact">
-          <Contact />
-        </Element> */}
       </div>
       <Element name="contact">
         <Footer />

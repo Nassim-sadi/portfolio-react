@@ -13,7 +13,7 @@ const ProjectCarousel = ({ images }: { images: string[] }) => {
         {images.map((image, i) => (
           <CarouselItem key={i}>
             <img
-              src={image}
+              src={`${import.meta.env.BASE_URL}${image}`}
               alt=""
               className="w-full h-full object-cover rounded-md"
             />
