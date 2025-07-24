@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const resume = {
     name: "Resume",
-    href: "https://drive.google.com/file/d/1ES7apA3yrxR7kN403rBz4DNjynu9mtt9/view?usp=sharing",
+    href: "https://drive.google.com/file/d/10KVNGiW8yLuJwdWo2hFfZ15bB4bVhNBZ/view?usp=drive_link",
     target: "_blank",
   };
 
