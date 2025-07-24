@@ -1,7 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import {
   laravelLogo,
-  reactLogo,
   tailwindLogo,
   vueLogo,
   sqlLogo,
